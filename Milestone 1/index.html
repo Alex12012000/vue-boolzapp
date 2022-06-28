@@ -50,22 +50,11 @@
             </div>
             <!-- contacts -->
             <div class="contacts">
-                <div class="contact flex">
-                    <img src="img/avatar_1.jpg" alt="">
-                    <span>Michele</span>
+                <div class="contact flex"  v-for="contact in contacts">
+                    <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
+                    <span>{{contact.name}}</span>
                 </div>
-                <div class="contact flex">
-                    <img src="img/avatar_1.jpg" alt="">
-                    <span>Michele</span>
-                </div>
-                <div class="contact flex">
-                    <img src="img/avatar_1.jpg" alt="">
-                    <span>Michele</span>
-                </div>
-                <div class="contact flex">
-                    <img src="img/avatar_1.jpg" alt="">
-                    <span>Michele</span>
-                </div>
+               
             </div>
         </div>
 
@@ -130,6 +119,6 @@
 
     </div>
     
-  
+    <script src="js/main.js"></script>
 </body>
 </html>
