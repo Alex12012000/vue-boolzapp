@@ -17,11 +17,10 @@ body {
     align-items: center;
 }
 .container {
-    width: 80%;
+    width: 80vw;
     height: 80vh;
     min-width: 60%;
     margin: 0 auto;
-    background-color: blueviolet;
 }
 
 .flex {
@@ -145,5 +144,123 @@ img {
 ----------------------*/
 
 .right-side {
-    width: 60%;
+    width: 70%;
+    flex-direction: column;
+    background-image: url('../img/mine.jpg');
 }
+
+.user-right-side {
+    height: 55px;
+    padding: 5px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eaeaea;
+}
+
+.contact-user-info {
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 10px;
+
+}
+
+.contact-user-info img {
+    margin-right: 10px;
+}
+
+.contact-user-text span{
+    display: block;
+}
+
+.last-log {
+    font-size: 14px;
+    color: gray;
+}
+
+.top-icons {
+    justify-content: flex-end;
+    flex-grow: 3;
+}
+
+.top-icons i {
+    margin: 0 10px;
+    color: gray;
+}
+
+/* chat */
+.chat {
+    flex-grow: 3;
+    padding: 40px;
+    position: relative;
+}
+
+.user-mess-container {
+    justify-content: end;
+    width: 100%;
+    flex-wrap: warp;
+    position: relative;
+}
+
+.user-message {
+    background-color: #d5f9ba;
+    padding: 20px;
+    max-width: 50%;
+    min-width: 35%;
+    border-radius: 20px;
+}
+
+.contact-message {
+    background-color: white;
+    padding: 20px;
+    max-width: 50%;
+    min-width: 35%;
+    border-radius: 20px;
+    justify-self: flex-start;
+    position: relative;
+}
+
+.daytime-contact {
+    font-size: 11px;
+    color: grey;
+    display: block;
+    position: absolute;
+    bottom: 3px;
+    right: 16px;
+}
+
+.for-user {
+    bottom: 3;
+    right: 16px;
+}
+
+/* chat bar */
+.chat-bar {
+    height: 55px;
+    padding: 5px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eaeaea;
+}
+
+.chat-content {
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-bar i {
+    margin: 0 15px;
+    font-size: 20px;
+    color: gray;
+}
+
+.chat-bar input {
+    flex-grow: 3;
+    height: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+}
+
