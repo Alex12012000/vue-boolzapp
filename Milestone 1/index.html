@@ -5,14 +5,79 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     
     <div id="root">
+       <div class="container flex">
+        <!-- left-side -->
+        <div class="left-side flex">
+            <!-- Userbar -->
+            <div class="user flex">
+                <!-- User info side -->
+                <div class="user-info flex">
+                    <img src="img/avatar_io.jpg" alt="user" >
+                    <span class="user-text">
+                        Nome Utente
+                    </span>
+                </div>
+                <!-- Icons -->
+                <div class="icons">
+                    <i class="fa-solid fa-circle-notch"></i>
+                    <i class="fa-solid fa-message"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+            </div>
+            <!-- notification -->
+            <div class="notification flex">
+                <div class="circle-bell">
+                    <i class="fa-solid fa-bell-slash"></i>
+                </div>
+                <div class="notifications-text">
+                    <span>Ricevi notifiche di nuovi messaggi</span>
+                    <a href="#">Attiva notifiche desktop</a>
+                </div>
+            </div>
+            <!-- search bar -->
+            <div class="search-bar">
+                <div class="input-and-icons flex">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    <input class="input-field" type="text" placeholder="Cerca o inizia una nuova chat">
+                </div>
+            </div>
+            <!-- contacts -->
+            <div class="contacts">
+                <div class="contact flex">
+                    <img src="img/avatar_1.jpg" alt="">
+                    <span>Michele</span>
+                </div>
+                <div class="contact flex">
+                    <img src="img/avatar_1.jpg" alt="">
+                    <span>Michele</span>
+                </div>
+                <div class="contact flex">
+                    <img src="img/avatar_1.jpg" alt="">
+                    <span>Michele</span>
+                </div>
+                <div class="contact flex">
+                    <img src="img/avatar_1.jpg" alt="">
+                    <span>Michele</span>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- right-side --> 
+        <div class="right-side">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus voluptatem possimus minus fuga, odit adipisci explicabo reiciendis. Ullam aliquam laborum quia, iste sequi sed quisquam consequatur odio neque, fugiat blanditiis.
+        </div>
+       </div>
         
+
+
     </div>
     
     <script src="js/main.js"></script>
