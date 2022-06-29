@@ -95,7 +95,7 @@
                     <div class="chat-bar flex">
                         <div class="chat-content flex">
                             <i class="far fa-face-smile"></i>
-                            <input type="text" placeholder="Scrivi un messaggio">
+                            <input type="text" placeholder="Scrivi un messaggio" v-model="userMessage" @keyup.enter="sendMessage(activeElement)">
                             <i class="fa-solid fa-microphone"></i>
                         </div>
                     </div>

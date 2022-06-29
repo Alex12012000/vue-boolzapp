@@ -2,6 +2,7 @@
 var app = new Vue ({
     el: '#root',
     data: {
+        userMessage: '',
         activeElement: 2,
         contacts: [
             {
@@ -90,10 +91,23 @@ var app = new Vue ({
         ]
         
     },
-    
+
     methods : {
         currentUserOnClick(elementIndex) {
             this.activeElement = elementIndex;
+            
+        },
+
+        sendMessage(elementIndex) {
+            let newMessage = {date: '10/01/2020 15:30:55', text: this.userMessage, status: 'sent'}
+            this.contacts[elementIndex].messages.push(newMessage)
+            
+            setTimeout(() => {
+                let newMessage = {date: '10/01/2020 15:30:55', text: 'ok', status: 'received'}
+                this.contacts[elementIndex].messages.push(newMessage)
+            }, 1000)
+
+            this.userMessage = ''
         }
     }
 })
