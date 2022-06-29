@@ -3,7 +3,10 @@ var app = new Vue ({
     el: '#root',
     data: {
         userMessage: '',
+        userSearch: '',
         activeElement: 2,
+        currentDayTime: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+        onlyTime: dayjs().format("HH:mm"),
         contacts: [
             {
                 name: 'Michele',
@@ -99,15 +102,33 @@ var app = new Vue ({
         },
 
         sendMessage(elementIndex) {
-            let newMessage = {date: '10/01/2020 15:30:55', text: this.userMessage, status: 'sent'}
+            let newMessage = {date: this.currentDayTime , text: this.userMessage, status: 'sent'}
             this.contacts[elementIndex].messages.push(newMessage)
             
             setTimeout(() => {
-                let newMessage = {date: '10/01/2020 15:30:55', text: 'ok', status: 'received'}
+                let newMessage = {date: this.currentDayTime, text: 'ok', status: 'received'}
                 this.contacts[elementIndex].messages.push(newMessage)
             }, 1000)
 
             this.userMessage = ''
+        },
+
+        filterElements() {
+            const userInputLower = this.userSearch.toLowerCase();
+
+            // Verifichiamo se la stringa data dall'utente
+            // è contenuta nella proprietà text di ogni todo
+            this.contacts.forEach((element) => {
+                const elementTextLower = element.name.toLowerCase();
+
+                if(elementTextLower.includes(userInputLower)) {
+                    element.visible = true;
+                } else {
+                    element.visible = false;
+                }
+
+                console.log(element.visible)
+            });
         }
     }
 })

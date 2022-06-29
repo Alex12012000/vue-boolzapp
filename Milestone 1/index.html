@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.3/dayjs.min.js" integrity="sha512-Ot7ArUEhJDU0cwoBNNnWe487kjL5wAOsIYig8llY/l0P2TUFwgsAHVmrZMHsT8NGo+HwkjTJsNErS6QqIkBxDw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -45,13 +46,13 @@
                     <div class="search-bar">
                         <div class="input-and-icons flex">
                             <i class="fa fa-search" aria-hidden="true"></i>
-                            <input class="input-field" type="text" placeholder="Cerca o inizia una nuova chat">
+                            <input v-model="userSearch" class="input-field" type="text" placeholder="Cerca o inizia una nuova chat" @keyup="filterElements()">
                         </div>
                     </div>
                     <!-- contacts -->
                     <div class="contacts">
                         <!-- Single contact -->
-                        <div class="contact flex"  v-for="contact, index in contacts" @click="currentUserOnClick(index)" :class="{active: activeElement === index}">
+                        <div class="contact flex" v-for="contact, index in contacts" v-if="contact.visible" @click="currentUserOnClick(index)" :class="{active: activeElement === index}">
                             <img :src="'./img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
                             <span>{{contact.name}}</span>
                         </div>
@@ -69,7 +70,7 @@
                             <img :src="'./img/avatar' + contact.avatar + '.jpg'" alt="">
                             <div class="contact-user-text">
                                 <span>{{contact.name}}</span>
-                                <span class="last-log">Ultimo accesso oggi alle</span>
+                                <span class="last-log">Ultimo accesso oggi alle {{onlyTime}}</span>
                             </div>
                         </div>
                         <!-- Icons -->

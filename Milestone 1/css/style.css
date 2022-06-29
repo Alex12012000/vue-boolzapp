@@ -135,6 +135,7 @@ img {
 .contact {
     padding: 1rem;
     border-bottom: 1px solid lightgray;
+    
 }
 
 .contact.active {
