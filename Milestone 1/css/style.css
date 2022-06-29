@@ -15,10 +15,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-width: 950px;
 }
 .container {
-    width: 80vw;
-    height: 80vh;
+    width: 80%;
+    height:95%;
+    display: flex;
     min-width: 60%;
     margin: 0 auto;
 }
@@ -39,12 +41,14 @@ img {
 ----------------------*/
 
 .left-side {
-    width: 40%;
+    width: 35%;
+    background-color: white;
+    display: flex;
     flex-direction: column;
 }
 
 /* user */
-.user {
+.user-head {
     width: 100%;
     height: 55px;
     padding: 5px;
@@ -53,11 +57,13 @@ img {
     background-color: #eaeaea;
 }
 
-.user-info {
+.user-head-info {
+    width: 100%;
     align-items: center;
+    flex-grow: 2;
 }
 
-.user i {
+.head-icons i {
     margin: 0 5px;
     color: grey;
 }
@@ -124,7 +130,6 @@ img {
     background-color: white;
     flex-grow: 1;
     overflow-y: auto;
-
 }
 
 .contact {
@@ -144,7 +149,7 @@ img {
 ----------------------*/
 
 .right-side {
-    width: 70%;
+    width: 65%;
     flex-direction: column;
     background-image: url('../img/mine.jpg');
 }
@@ -190,38 +195,33 @@ img {
 
 /* chat */
 .chat {
-    flex-grow: 3;
+    flex-grow: 1;
     padding: 40px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+}
+
+.message {
+    padding: 15px;
+    max-width: 50%;
+    min-width: 35%;
+    border-radius: 10px;
     position: relative;
 }
 
-.user-mess-container {
-    justify-content: end;
-    width: 100%;
-    flex-wrap: warp;
-    position: relative;
-}
-
-.user-message {
+.sent {
     background-color: #d5f9ba;
-    padding: 20px;
-    max-width: 50%;
-    min-width: 35%;
-    border-radius: 20px;
+    align-self: flex-end;
 }
 
-.contact-message {
+.recived {
     background-color: white;
-    padding: 20px;
-    max-width: 50%;
-    min-width: 35%;
-    border-radius: 20px;
-    justify-self: flex-start;
-    position: relative;
+    align-self: flex-start;
 }
 
 .daytime-contact {
-    font-size: 11px;
+    font-size: 7px;
     color: grey;
     display: block;
     position: absolute;
