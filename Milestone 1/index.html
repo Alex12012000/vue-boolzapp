@@ -51,7 +51,7 @@
                     <!-- contacts -->
                     <div class="contacts">
                         <!-- Single contact -->
-                        <div class="contact flex"  v-for="contact in contacts">
+                        <div class="contact flex"  v-for="contact, index in contacts" @click="currentUserOnClick(index)" :class="{active: activeElement === index}">
                             <img :src="'./img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
                             <span>{{contact.name}}</span>
                         </div>
@@ -65,10 +65,10 @@
                     <!-- Userbar -->
                     <div class="user-right-side flex ">
                         <!-- User info right side -->
-                        <div class="contact-user-info flex">
-                            <img src="img/avatar_3.jpg" alt="">
+                        <div v-for="contact, index in contacts" v-if="activeElement === index" class="contact-user-info flex">
+                            <img :src="'./img/avatar' + contact.avatar + '.jpg'" alt="">
                             <div class="contact-user-text">
-                                <span>Samuele</span>
+                                <span>{{contact.name}}</span>
                                 <span class="last-log">Ultimo accesso oggi alle</span>
                             </div>
                         </div>
@@ -81,30 +81,15 @@
                     </div>
                     <!-- chat -->
                     <div class="chat">
-                      
-                        <div class="message recived">
-                            <span>La Marianna va in campagna</span>
-                            <span class="daytime-contact">
-                                28/03/2020 10:10:40
-                            </span>
-                        </div>
-                        
-                        
-                        <div class="message sent">
-                            <span>Sicuro di non aver sbagliato chat</span>
-                            <span class="daytime-contact for-user">
-                                28/03/2020 10:20:10
-                            </span>
-                        </div>
-                      
-                        
-                        <div class="message recived">
-                            <span>Ah scusa</span>
-                            <span class="daytime-contact">
-                                28/03/2020 16:15:22
-                            </span>
-                        </div>
-                        
+                        <!-- Single Message -->
+                        <div v-for="element, index in contacts" class="single-mess">
+                            <div v-for="message in element.messages" v-if="activeElement === index" class="message" :class="message.status">
+                                <span>{{message.text}}</span>
+                                <span class="daytime-contact">
+                                    {{message.date}}
+                                </span>
+                            </div>
+                        </div>   
                     </div>
                     <!-- Chat bar -->
                     <div class="chat-bar flex">

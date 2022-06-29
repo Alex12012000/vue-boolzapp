@@ -137,6 +137,10 @@ img {
     border-bottom: 1px solid lightgray;
 }
 
+.contact.active {
+    background-color: lightgrey;
+}
+
 .contact:nth-last-child(1) {
     border: none;
 }
@@ -197,9 +201,7 @@ img {
 .chat {
     flex-grow: 1;
     padding: 40px;
-    display: flex;
-    flex-direction: column;
-    overflow-y: hidden;
+    overflow-y: auto;
 }
 
 .message {
@@ -208,6 +210,12 @@ img {
     min-width: 35%;
     border-radius: 10px;
     position: relative;
+    margin: 5px 0;
+}
+
+.single-mess {
+    display: flex;
+    flex-direction: column;
 }
 
 .sent {
@@ -215,7 +223,7 @@ img {
     align-self: flex-end;
 }
 
-.recived {
+.received {
     background-color: white;
     align-self: flex-start;
 }

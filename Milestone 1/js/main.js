@@ -2,6 +2,7 @@
 var app = new Vue ({
     el: '#root',
     data: {
+        activeElement: 2,
         contacts: [
             {
                 name: 'Michele',
@@ -88,5 +89,11 @@ var app = new Vue ({
             },
         ]
         
+    },
+    
+    methods : {
+        currentUserOnClick(elementIndex) {
+            this.activeElement = elementIndex;
+        }
     }
 })
