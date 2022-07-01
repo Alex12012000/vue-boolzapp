@@ -108,28 +108,38 @@ var app = new Vue ({
 
     methods : {
         currentUserOnClick(elementIndex) {
+            // Al click sul contatto actvieElement diventarà l'index del contatto cliccato
             this.activeElement = elementIndex;
+            // il messaggio corrente ritornerà null
             this.currentMessage = null;
         },
 
         sendMessage(elementIndex) {
+            // se l'utente inserisce una stringa vuota il messaggio non sarà inviato
             if(this.userMessage === '') {
                 this.userMessage = null;
             }
+
+            // il messaggio dell'utente verrà pushato sotto forma di object all'interno dell'array principale
             const newMessage = {date: dayjs().format("DD/MM/YYYY HH:mm:ss"), text: this.userMessage.trim(), status: 'sent'}
             this.contacts[elementIndex].messages.push(newMessage)
             
+            // dopo un secondo otterremo una risposta automatica 
             setTimeout(() => {
                 let newMessage = {date: dayjs().format("DD/MM/YYYY HH:mm:ss"), text: 'ok', status: 'received'}
                 this.contacts[elementIndex].messages.push(newMessage)
             }, 1000)
 
+            // all'invio del messaggio l'input ritorna ad essere vuoto
             this.userMessage = ''
         },
 
         filterElements() {
+            // variabile che trasforma cio che è digitato dall'utente in lowerCase
             const userInputLower = this.userSearch.toLowerCase();
-
+            // per ogni contatto all'interno di contacts 
+            // compariamo cio che l'utente scrive con i nomi all'interno dell'array, se combaciano
+            // vengono mostrati altrimenti no
             this.contacts.forEach((element) => {
                 const elementTextLower = element.name.toLowerCase();
 
@@ -142,15 +152,18 @@ var app = new Vue ({
         },
 
         toggleMenu(messageIndex) {
+            // se il messaggio corrente non ha valore o è diverso dall'index del messaggio
+            // che stiamo selezionando, il currentMessage diventà l'indice del messaggio
+            // altrimenti diventa null
             if(this.currentMessage !== messageIndex) {
                 this.currentMessage = messageIndex;
-                console.log(this.currentMessage, messageIndex)
             } else {
                 this.currentMessage = null;
             }
         }, 
 
-        deleteMessage (currentIndex, mexIndex) {
+        // al click su cancella messaggio il messaggio corrente viene eliminato e ritorna ad essere null
+        deleteMessage (currentIndex) {
             this.contacts[this.activeElement].messages.splice(currentIndex, 1)
             this.currentMessage = null;
         },

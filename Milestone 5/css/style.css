@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 /* Common */
 body {
     width: 100%;
@@ -16,6 +17,7 @@ body {
     justify-content: center;
     align-items: center;
     min-width: 950px;
+    font-family: "Segoe UI", "Helvetica Neue", Helvetica, "Lucida Grande", Arial, Ubuntu, Cantarell, "Fira Sans", sans-serif;
 }
 .container {
     width: 80%;
@@ -59,12 +61,16 @@ i {
     align-items: center;
     justify-content: space-between;
     background-color: #eaeaea;
+    border-right: 1px solid lightgrey;
 }
 
 .user-head-info {
-    width: 100%;
     align-items: center;
     flex-grow: 2;
+}
+
+.user-head-info img {
+    margin: 0 5px;
 }
 
 .head-icons i {
@@ -125,8 +131,6 @@ i {
     text-align: center;
     line-height: 15px;
     color: grey;
-    
-   
 }
 
 /* contacts */
@@ -175,6 +179,8 @@ i {
     font-size: 13px;
     color: grey;
 }
+
+
 /* -------------------
        RIGHT-SIDE
 ----------------------*/
@@ -288,6 +294,7 @@ i {
     position: absolute;
     z-index: 10;
     display: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .text-menu.active {
